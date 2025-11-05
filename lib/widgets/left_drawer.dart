@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_news/screens/menu.dart';
+import 'package:football_news/screens/newslist_form.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -25,16 +26,19 @@ class LeftDrawer extends StatelessWidget {
                 Padding(padding: EdgeInsets.all(10)),
                 Text(
                   "Seluruh berita sepak bola terkini di sini!",
-                  // TODO: Tambahkan gaya teks dengan center alignment, font ukuran 15, warna putih, dan weight biasa
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 15,
+                    color: Colors.white,
+                    fontWeight: FontWeight.normal,
+                  ),
                 ),
               ],
             ),
           ),
-          // TODO: Bagian routing
           ListTile(
             leading: const Icon(Icons.home_outlined),
             title: const Text('Home'),
-            // Bagian redirection ke MyHomePage
             onTap: () {
               Navigator.pushReplacement(
                 context,
@@ -45,15 +49,24 @@ class LeftDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.post_add),
             title: const Text('Add News'),
-            // Bagian redirection ke NewsFormPage
             onTap: () {
-              /*
-    TODO: Buatlah routing ke NewsFormPage di sini,
-    setelah halaman NewsFormPage sudah dibuat.
-    */
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewsFormPage()),
+              );
             },
           ),
           // TODO: Buat ListTile baru untuk ke halaman melihat news
+          ListTile(
+            leading: const Icon(Icons.newspaper),
+            title: const Text('See News'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
+            },
+          ),
         ],
       ),
     );
