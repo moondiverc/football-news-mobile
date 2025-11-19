@@ -42,7 +42,7 @@ class NewsEntryCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // Title
+                // Title News
                 Text(
                   news.title,
                   style: const TextStyle(
