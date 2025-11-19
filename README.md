@@ -1,4 +1,4 @@
-# football_news
+# Football News
 
 A new Flutter project.
 
